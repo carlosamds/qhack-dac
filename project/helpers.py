@@ -1,5 +1,3 @@
-# Reference: https://www.cs.toronto.edu/~vmnih/docs/dqn.pdf
-
 from distutils.util import strtobool
 import collections
 import numpy as np

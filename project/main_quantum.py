@@ -69,7 +69,6 @@ if __name__ == "__main__":
 
             logits = np.array([qnode(target_network, obs).tolist() for obs in s_next_obses])
             target_max = np.argmax(logits, axis=1).round()
-            target_max[target_max > 1] = 1
 
             td_target = s_rewards + GAMMA * target_max * (1 - s_dones)
     
@@ -101,7 +100,7 @@ if __name__ == "__main__":
         obs = env.reset()
         while not done:
             logits = qnode(q_network, obs)
-            action = min(1, np.argmax(logits))
+            action = np.argmax(logits)
             obs, reward, done, _ = env.step(action)
             total_reward += reward
             env.render()

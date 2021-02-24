@@ -1,22 +1,21 @@
 import time
 
 # params
+
 # quantum circuit
 N_WIRES = 4
 N_LAYERS = 3
 
-USE_CUDA = True
-ENV_NAME = "CartPole-v1"
-BUFFER_SIZE = 20000
-TOTAL_TIMESTEPS = 1000000
+ENV_NAME = "Blackjack-v0"
+BUFFER_SIZE = 10000
+TOTAL_TIMESTEPS = 20000
 LEARNING_STARTS = 10000
-TRAIN_FREQ = 4
+TRAIN_FREQ = 1
 BATCH_SIZE = 32
 TARGET_NET_UPDATE_FREQ = 500 # net_target = net with that frequency
 
 LR = 0.5
 GAMMA = 0.98
-MAX_GRAD_NORM = 0.5 # maximum norm for the gradient clipping
 
 # epsilon params
 START_EPSILON = 0.8
